@@ -1,3 +1,4 @@
+import { type } from '@testing-library/user-event/dist/type'
 import React from 'react'
 //React Element
 
@@ -7,7 +8,14 @@ import React from 'react'
 //const title = React.createElement("h1", null, 'React')
 
 //React component
-const Title = () => <h1>Hello React component</h1>
+
+type TitleProps = {
+    title: string
+    text?: string
+}
+
+
+const Title = (props: TitleProps) => <h1>{props.text} {props.title}</h1>
 const List = () => {
     let a = 10
     return (
@@ -25,7 +33,7 @@ const List = () => {
 function App() {
     return (
         <div className="App">
-            <Title /> <List />
+            <Title title="Test.js"/>  <Title title="App.js"/> <List />
         </div>
     )
 }
