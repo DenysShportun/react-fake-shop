@@ -2,6 +2,21 @@ import React from "react"
 import { Button, Card, CardActions, CardContent } from "@mui/material"
 import "./ProductListItems.scss"
 
+const user = {
+    name: "Jack",
+    age: 20,
+    sex: "male",
+}
+//const name =user.name
+
+//console.log(name)
+
+const { name, age, sex } = user
+
+console.log(name)
+console.log(age)
+console.log(sex)
+
 type Props = {
     name: string
     description: string
