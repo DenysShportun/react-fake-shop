@@ -1,13 +1,14 @@
-import React from 'react'
-import AppBar from '@mui/material/AppBar'
-import Box from '@mui/material/Box'
-import Toolbar from '@mui/material/Toolbar'
-import Typography from '@mui/material/Typography'
-import IconButton from '@mui/material/IconButton'
-import MenuIcon from '@mui/icons-material/Menu'
-import Container from '@mui/system/Container'
-import Menu from 'components/Menu/Menu'
-import CartHeader from 'components/Cart/CartHeader'
+import React from "react"
+import AppBar from "@mui/material/AppBar"
+import Box from "@mui/material/Box"
+import Toolbar from "@mui/material/Toolbar"
+import Typography from "@mui/material/Typography"
+import IconButton from "@mui/material/IconButton"
+import MenuIcon from "@mui/icons-material/Menu"
+import Container from "@mui/system/Container"
+import Menu from "components/Menu/Menu"
+import CartHeader from "components/Cart/CartHeader"
+import "./Header.scss"
 
 type Props = {}
 
