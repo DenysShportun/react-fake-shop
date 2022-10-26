@@ -2,21 +2,6 @@ import React from "react"
 import { Button, Card, CardActions, CardContent } from "@mui/material"
 import "./ProductListItems.scss"
 
-const user = {
-    name: "Jack",
-    age: 20,
-    sex: "male",
-}
-//const name =user.name
-
-//console.log(name)
-
-const { name, age, sex } = user
-
-console.log(name)
-console.log(age)
-console.log(sex)
-
 type Props = {
     name: string
     description: string
@@ -25,19 +10,25 @@ type Props = {
     price: number
 }
 
-const PoductListItem = (props: Props) => {
+const PoductListItem = ({
+    name,
+    description,
+    type,
+    capacity,
+    price,
+}: Props) => {
     return (
         <Card className="product">
             <CardContent>
-                <h4>{props.name}</h4>
-                <p className="product-description">{props.description}</p>
+                <h4>{name}</h4>
+                <p className="product-description">{description}</p>
                 <div className="product-features">
-                    <span>Type</span>: {props.type}
+                    <span>Type</span>: {type}
                 </div>
                 <div className="product-features">
-                    <span>Capacity</span>: {props.capacity} Gb
+                    <span>Capacity</span>: {capacity} Gb
                 </div>
-                <div className="product-price">Price: {props.price} $</div>
+                <div className="product-price">Price: {price} $</div>
             </CardContent>
             <CardActions className="btn-wrap">
                 <Button variant="contained">Add to cat</Button>
