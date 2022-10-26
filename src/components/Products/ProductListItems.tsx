@@ -1,5 +1,6 @@
 import React from 'react'
 import { Button, Card, CardActions, CardContent } from '@mui/material'
+import './ProductListItems.css'
 
 type Props = {
     name: string
@@ -19,8 +20,8 @@ const PoductListItem = (props: Props) => {
                 <div>Capacity: {props.capacity} Gb</div>
                 <div>Price: {props.price} $</div>
             </CardContent>
-            <CardActions>
-                <Button>Add to cat</Button>
+            <CardActions className="btn-wrap">
+                <Button variant="contained">Add to cat</Button>
             </CardActions>
         </Card>
     )
