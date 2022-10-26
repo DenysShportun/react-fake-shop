@@ -1,6 +1,6 @@
-import React from 'react'
-import { Button, Card, CardActions, CardContent } from '@mui/material'
-import './ProductListItems.css'
+import React from "react"
+import { Button, Card, CardActions, CardContent } from "@mui/material"
+import "./ProductListItems.scss"
 
 type Props = {
     name: string
