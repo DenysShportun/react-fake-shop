@@ -9,7 +9,7 @@ const ProductList = (props: Props) => {
             <Typography
                 align="center"
                 variant="h4"
-                style={{
+                sx={{
                     margin: '25px 0',
                     textTransform: 'uppercase',
                 }}
