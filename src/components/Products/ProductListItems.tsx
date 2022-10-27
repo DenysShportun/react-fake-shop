@@ -8,6 +8,7 @@ type Props = {
     type: string
     capacity: number
     price: number
+    image: string
 }
 
 const PoductListItem = ({
@@ -16,10 +17,14 @@ const PoductListItem = ({
     type,
     capacity,
     price,
+    image,
 }: Props) => {
     return (
         <Card className="product">
             <CardContent>
+                <div className="product-image">
+                    <img src={image} alt={name} />
+                </div>
                 <h4>{name}</h4>
                 <p className="product-description">{description}</p>
                 <div className="product-features">
