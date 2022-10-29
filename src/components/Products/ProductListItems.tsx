@@ -1,4 +1,4 @@
-import React from "react"
+import React, { useState } from "react"
 import {
     Button,
     Card,
@@ -25,6 +25,18 @@ const PoductListItem = ({
     price,
     image,
 }: Props) => {
+    const [count, setCount] = useState<number>(1)
+    const [color, setColor] = useState<string>("green")
+
+    const onIncrementClick = () =>
+        setCount((prevState: number) => prevState + 1)
+
+    const onDecrementClick = () =>
+        setCount((prevState: number) => prevState - 1)
+
+    const changeColor = () =>
+        setColor((prevSate: string) => (prevSate === "green" ? "red" : "green"))
+
     return (
         <Card className="product">
             <CardContent>
@@ -40,12 +52,24 @@ const PoductListItem = ({
                     <span>Capacity</span>: {capacity} Gb
                 </div>
                 <div className="product-price">Price: {price} $</div>
+                <div>
+                    <p>Color: {color}</p>
+                    <button onClick={changeColor}>Checnge color</button>
+                </div>
                 <div className="product-quantity">
-                    <Button variant="contained" size="small">
+                    <Button
+                        variant="contained"
+                        size="small"
+                        onClick={onDecrementClick}
+                    >
                         -
                     </Button>
-                    <TextField size="small" value="1" variant="outlined" />
-                    <Button variant="contained" size="small">
+                    <TextField size="small" value={count} variant="outlined" />
+                    <Button
+                        variant="contained"
+                        size="small"
+                        onClick={() => onIncrementClick()}
+                    >
                         +
                     </Button>
                 </div>
