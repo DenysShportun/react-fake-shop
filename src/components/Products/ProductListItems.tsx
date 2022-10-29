@@ -34,9 +34,6 @@ const PoductListItem = ({
     const onDecrementClick = () =>
         setCount((prevState: number) => prevState - 1)
 
-    const changeColor = () =>
-        setColor((prevSate: string) => (prevSate === "green" ? "red" : "green"))
-
     return (
         <Card className="product">
             <CardContent>
@@ -54,13 +51,14 @@ const PoductListItem = ({
                 <div className="product-price">Price: {price} $</div>
                 <div>
                     <p>Color: {color}</p>
-                    <button onClick={changeColor}>Checnge color</button>
+                    <button>Checnge color</button>
                 </div>
                 <div className="product-quantity">
                     <Button
                         variant="contained"
                         size="small"
                         onClick={onDecrementClick}
+                        disabled={count <= 1}
                     >
                         -
                     </Button>
@@ -69,6 +67,7 @@ const PoductListItem = ({
                         variant="contained"
                         size="small"
                         onClick={() => onIncrementClick()}
+                        disabled={count >= 10}
                     >
                         +
                     </Button>
