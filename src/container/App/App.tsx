@@ -4,7 +4,6 @@ import Header from "container/Header/Header"
 import Main from "../Main/Main"
 import Footer from "../Footer/Footer"
 import { StyledEngineProvider } from "@mui/material"
-import { count } from "console"
 
 type Props = {}
 
@@ -19,7 +18,7 @@ const App = (props: Props) => {
         totalPrice: 0,
     })
 
-    const addProductsToCart = (count: number, price: number) => {
+    const addProductToCart = (count: number, price: number) => {
         setCartData((prevState: CartData) => ({
             totalCount: prevState.totalCount + count,
             totalPrice: prevState.totalPrice + count * price,
@@ -30,11 +29,7 @@ const App = (props: Props) => {
         <StyledEngineProvider injectFirst>
             <CssBaseline />
             <Header cartData={cartData} />
-            <button onClick={() => addProductsToCart(1, 1000)}>
-                {" "}
-                Add to Cart{" "}
-            </button>
-            <Main />
+            <Main addProductToCart={addProductToCart} />
             <Footer />
         </StyledEngineProvider>
     )
