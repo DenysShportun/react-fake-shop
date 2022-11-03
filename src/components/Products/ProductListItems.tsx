@@ -50,9 +50,7 @@ const PoductListItem = ({
                     <span>Capacity</span>: {capacity} Gb
                 </div>
                 <div className="product-price">Price: {price} $</div>
-                <div>
-                    <button>Checnge color</button>
-                </div>
+                <div></div>
                 <div className="product-quantity">
                     <Button
                         variant="contained"
