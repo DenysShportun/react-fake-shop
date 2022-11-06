@@ -9,16 +9,18 @@ import {
 import "./ProductListItems.scss"
 
 type Props = {
+    id: number
     name: string
     description: string
     type: string
     capacity: number
     price: number
     image: string
-    addProductToCart: (count: number, price: number) => void
+    addProductToCart: (id: number, count: number) => void
 }
 
 const PoductListItem = ({
+    id,
     name,
     description,
     type,
@@ -74,7 +76,7 @@ const PoductListItem = ({
             <CardActions className="btn-wrap">
                 <Button
                     variant="contained"
-                    onClick={() => addProductToCart(count, price)}
+                    onClick={() => addProductToCart(id, count)}
                 >
                     Add to cat
                 </Button>
