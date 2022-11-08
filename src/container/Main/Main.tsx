@@ -9,9 +9,12 @@ import PaymantPage from "pages/Paymant/PaymantPage"
 
 type Props = {
     addProductToCart: (id: number, count: number) => void
+    productsInCart: {
+        [id: number]: number
+    }
 }
 
-const Main = ({ addProductToCart }: Props) => {
+function Main({ addProductToCart, productsInCart }: Props) {
     return (
         <main>
             <Container maxWidth="lg">
@@ -20,7 +23,10 @@ const Main = ({ addProductToCart }: Props) => {
                         path="/"
                         element={<Home addProductToCart={addProductToCart} />}
                     />
-                    <Route path="cart" element={<CartPage />} />
+                    <Route
+                        path="cart"
+                        element={<CartPage productsInCart={productsInCart} />}
+                    />
                     <Route path="About" element={<AboutPage />} />
                     <Route path="Shipping" element={<ShippingPage />} />
                     <Route path="Paymant" element={<PaymantPage />} />
