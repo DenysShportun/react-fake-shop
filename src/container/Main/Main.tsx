@@ -3,6 +3,9 @@ import { Container } from "@mui/material"
 import Home from "pages/Home/Home"
 import { Routes, Route } from "react-router-dom"
 import CartPage from "pages/Cart/CartPage"
+import AboutPage from "pages/About/AboutPage"
+import ShippingPage from "pages/Shipping/ShippingPage"
+import PaymantPage from "pages/Paymant/PaymantPage"
 
 type Props = {
     addProductToCart: (id: number, count: number) => void
@@ -18,6 +21,9 @@ const Main = ({ addProductToCart }: Props) => {
                         element={<Home addProductToCart={addProductToCart} />}
                     />
                     <Route path="cart" element={<CartPage />} />
+                    <Route path="About" element={<AboutPage />} />
+                    <Route path="Shipping" element={<ShippingPage />} />
+                    <Route path="Paymant" element={<PaymantPage />} />
                 </Routes>
             </Container>
         </main>
