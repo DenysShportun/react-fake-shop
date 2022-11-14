@@ -4,6 +4,7 @@ import Header from "container/Header/Header"
 import Main from "../Main/Main"
 import Footer from "../Footer/Footer"
 import { StyledEngineProvider } from "@mui/material"
+import { omit } from "lodash"
 
 type Props = {}
 
@@ -25,11 +26,7 @@ const App = (props: Props) => {
     }
 
     const removeProductFromCart = (id: number) => {
-        setProductsInCart((prevState: AppProps) => {
-            let prevProductsInCart = { ...prevState }
-            delete prevProductsInCart[id]
-            return prevProductsInCart
-        })
+        setProductsInCart((prevState: AppProps) => omit(prevState, id))
     }
 
     return (
