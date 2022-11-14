@@ -12,9 +12,14 @@ type Props = {
     productsInCart: {
         [id: number]: number
     }
+    removeProductFromCart: (id: number) => void
 }
 
-function Main({ addProductToCart, productsInCart }: Props) {
+function Main({
+    addProductToCart,
+    productsInCart,
+    removeProductFromCart,
+}: Props) {
     return (
         <main>
             <Container maxWidth="lg">
@@ -25,7 +30,12 @@ function Main({ addProductToCart, productsInCart }: Props) {
                     />
                     <Route
                         path="cart"
-                        element={<CartPage productsInCart={productsInCart} />}
+                        element={
+                            <CartPage
+                                productsInCart={productsInCart}
+                                removeProductFromCart={removeProductFromCart}
+                            />
+                        }
                     />
                     <Route path="About" element={<AboutPage />} />
                     <Route path="Shipping" element={<ShippingPage />} />
