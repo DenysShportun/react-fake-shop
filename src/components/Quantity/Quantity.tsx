@@ -1,8 +1,8 @@
 import React from "react"
 import { Button, TextField } from "@mui/material"
 type Props = {
-    onDecrementClick?: () => void
-    onIncrementClick?: () => void
+    onDecrementClick: () => void
+    onIncrementClick: () => void
     count: number
 }
 

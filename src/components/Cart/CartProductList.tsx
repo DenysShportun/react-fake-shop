@@ -15,6 +15,7 @@ type Props = {
     }
     CartItem?: any
     removeProductFromCart?: (id: number) => void
+    changeProductQuantity?: (id: number, count: number) => void
 }
 
 const CartProductList = ({
@@ -22,15 +23,17 @@ const CartProductList = ({
     productsObject = getProductsObjejt(productsArray),
     CartItem = CartProductListItem,
     removeProductFromCart,
+    changeProductQuantity,
 }: Props) => {
     return (
         <>
             {keys(productsInCart).map((productId) => (
                 <CartItem
                     key={productId}
-                    product={productsArray[parseInt(productId)]}
+                    product={productsObject[parseInt(productId)]}
                     productCount={productsInCart[parseInt(productId)]}
                     removeProductFromCart={removeProductFromCart}
+                    changeProductQuantity={changeProductQuantity}
                 />
             ))}
         </>
