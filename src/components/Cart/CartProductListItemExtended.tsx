@@ -3,6 +3,7 @@ import { Product } from "components/Products/productsArray"
 import DeleteIcon from "@mui/icons-material/Delete"
 
 import "./CartProductListItemExtended.scss"
+import Quantity from "components/Quantity/Quantity"
 type Props = {
     product: Product
     productCount: number
@@ -31,6 +32,7 @@ const CartProductListItemExtended = ({
                     <div>{product.name}</div>
                     <p>Price for one item: {product.price}</p>
                     <p>Count: {productCount}</p>
+                    <Quantity count={productCount} />
                     <Button
                         variant="contained"
                         onClick={() => removeProductFromCart(product.id)}
